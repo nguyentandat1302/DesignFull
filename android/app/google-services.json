@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "481530547991",
+    "project_id": "designfull-4465a",
+    "storage_bucket": "designfull-4465a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481530547991:android:9ebc6e221755bfde17f152",
+        "android_client_info": {
+          "package_name": "com.designfull"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXuI5ZN6ikKs6X2wZQ-PVggW2I6JP-f7w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
