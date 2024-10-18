@@ -36,31 +36,32 @@ const inital = () =>{
         })
         .catch(e => console.log(e))
       }
+      
   })
 }
 const App = () => {
   useEffect(() =>inital(),[])
   return (
     
-      // <NavigationContainer>
-      //   <PaperProvider>
-      //     <BottomTabNavigator/>
-      //     <MyStack/> 
-      //     <TodoApp/>
-      //   </PaperProvider>
-      // </NavigationContainer>
-
       <NavigationContainer>
         <PaperProvider>
-          <MyContextControllerProvider>
-            {/* <Home /> */}
-            {/* <AddService/> */}
-            {/* <ServiceDetail/> */}
-            <MainRouter/>
-            {/* <EditService/> */}
-          </MyContextControllerProvider>
+          <BottomTabNavigator/>
+          {/* <MyStack/>  */}
+          {/* <TodoApp/> */}
         </PaperProvider>
       </NavigationContainer>
+
+      // <NavigationContainer>
+      //   <PaperProvider>
+      //     <MyContextControllerProvider>
+      //       {/* <Home /> */}
+      //       {/* <AddService/> */}
+      //       {/* <ServiceDetail/> */}
+      //       <MainRouter/>
+      //       {/* <EditService/> */}
+      //     </MyContextControllerProvider>
+      //   </PaperProvider>
+      // </NavigationContainer>
    
   );
 };

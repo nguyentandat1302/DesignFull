@@ -16,6 +16,7 @@ const MyButtonTab = () => {
             <Tab.Screen name="Profile" component={Profle}/>
             <Tab.Screen name="Profile" component={Setting}/>
 
+
         </Tab.Navigator>
     )
 }
