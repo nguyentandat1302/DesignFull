@@ -1,20 +1,13 @@
+import "react-native-gesture-handler"
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { Provider as PaperProvider, Text } from "react-native-paper"; 
-import Contact from "./screens/Contact";
 import { NavigationContainer } from "@react-navigation/native"
-import BottomTabNavigator from "./routers/ButtomTabNavigator";
-import MyStack from "./routers/MyStack";
-import Firestore, { firebase }  from "@react-native-firebase/firestore";
-import TodoApp from "./android/screens/ToDoApp";
+import Firestore  from "@react-native-firebase/firestore";
 import { MyContextControllerProvider } from "./Context";
 import auth from "@react-native-firebase/auth"
-import Home from "./adminscreensss/Home"
-import MainRouter from "./routersss/MainRouter";
-import AddService from "./adminscreensss/AddService";
-import ServiceDetail from "./adminscreensss/ServiceDetail";
-import EditService from "./adminscreensss/EditService";
-import Register from "./adminscreensss/Register";
+import MainRouter from "./routersss/customer/MainRouter";
+
 
 const inital = () =>{
   const cUSERS = Firestore().collection("USERS")
@@ -22,7 +15,7 @@ const inital = () =>{
     name: " Nguyen Tan Dat",
     phone: "0587944658",
     address: "Phu Yen",
-    email:"datnguyen13021302@gmail.com",
+    email:"abcdef@gmail.com",
     role:'admin'
   }
   cUSERS.doc(admin.email)
@@ -43,25 +36,18 @@ const App = () => {
   useEffect(() =>inital(),[])
   return (
     
+
       <NavigationContainer>
         <PaperProvider>
-          <BottomTabNavigator/>
-          {/* <MyStack/>  */}
-          {/* <TodoApp/> */}
+          <MyContextControllerProvider>
+            {/* <Home /> */}
+            {/* <AddService/> */}
+            {/* <ServiceDetail/> */}
+            <MainRouter/>
+            {/* <EditService/> */}
+          </MyContextControllerProvider>
         </PaperProvider>
       </NavigationContainer>
-
-      // <NavigationContainer>
-      //   <PaperProvider>
-      //     <MyContextControllerProvider>
-      //       {/* <Home /> */}
-      //       {/* <AddService/> */}
-      //       {/* <ServiceDetail/> */}
-      //       <MainRouter/>
-      //       {/* <EditService/> */}
-      //     </MyContextControllerProvider>
-      //   </PaperProvider>
-      // </NavigationContainer>
    
   );
 };

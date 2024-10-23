@@ -18,11 +18,8 @@ const reducer = (state, action) => {
 
 const MyContextControllerProvider = ({children}) => {
     const initialStates = {
-        userLogin: {
-            userName: "admin",
-            fillName: " Nguyen Tan Dat"
-        },
-        shoppingCart: {}
+        userLogin: null,
+        shoppingCart: []
     }
 
     const [controller, dispatch] = useReducer(reducer,initialStates);
@@ -55,13 +52,18 @@ const useMyContextController = () =>{
 
   //action
 
-  const login = (dispatch, userName, password) =>{
+  const login = (dispatch, email, password) =>{
+    //Su dung auth de xac thuc là 1 promise nen co then cacth . Hoạc su dung asign await
     auth().signInWithEmailAndPassword(email,password)
     .then(()=>{
+            //Thuc thuc thanh cong lay thong tin user tu firestore voi key la email
             cUSERS.doc(email)
             .onSnapshot((doc) =>{
+                //Cap nhat tthog tin userLogin len store
                 dispatch({type:"USER_LOGIN",value: doc.data()})
+                console.log("Login sussess!")
             })
+           
     })
     .catch(e => console.log(e))
   }

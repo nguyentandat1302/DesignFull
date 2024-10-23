@@ -31,7 +31,7 @@ const Register = ({ navigation }) => {
                 email: email,
                 createdAt: firestore.FieldValue.serverTimestamp()
               }).then(() => {
-                console.log(`Registered User: ${fullName}, Email: ${email}`);
+                console.log(`Registered User: ${fullName}, Email: ${email} , password ${password}`);
                 navigation.navigate("login")
               }).catch((error) => {
                 console.error("Error saving user data: ", error);

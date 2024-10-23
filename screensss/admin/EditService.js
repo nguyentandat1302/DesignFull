@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
-const AddService = () => {
-  const [serviceName, setServiceName] = useState('');
-  const [price, setPrice] = useState('0');
+const EditService = ({ route, navigation }) => {
+  const { serviceName: initialServiceName, price: initialPrice } = route.params;
 
-  const handleAddService = () => {
-    // Xử lý logic thêm dịch vụ tại đây
-    console.log(`Service Name: ${serviceName}, Price: ${price}`);
+  const [serviceName, setServiceName] = useState(initialServiceName);
+  const [price, setPrice] = useState(initialPrice);
+
+  const handleEditService = () => {
+    // Xử lý logic cập nhật dịch vụ tại đây
+    console.log(`Updated Service Name: ${serviceName}, Updated Price: ${price}`);
+    // Bạn có thể thêm logic để quay lại hoặc thông báo thành công
+    navigation.goBack();
   };
 
   return (
     <View style={styles.container}>
       {/* Tiêu đề màn hình */}
       <View style={styles.header}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Text style={styles.backIcon}>←</Text>
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Service</Text>
+        <Text style={styles.headerTitle}>Edit Service</Text>
       </View>
 
       {/* Form nhập thông tin dịch vụ */}
@@ -39,9 +43,8 @@ const AddService = () => {
           onChangeText={setPrice}
         />
 
-        {/* Nút thêm dịch vụ */}
-        <TouchableOpacity style={styles.addButton} onPress={handleAddService}>
-          <Text style={styles.addButtonText}>Add</Text>
+        <TouchableOpacity style={styles.updateButton} onPress={handleEditService}>
+          <Text style={styles.updateButtonText}>Update</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -85,17 +88,17 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     fontSize: 16,
   },
-  addButton: {
+  updateButton: {
     backgroundColor: '#F50057',
     paddingVertical: 15,
     borderRadius: 10,
     alignItems: 'center',
   },
-  addButtonText: {
+  updateButtonText: {
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
   },
 });
 
-export default AddService;
+export default EditService;

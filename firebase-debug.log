@@ -1,0 +1,235 @@
+[debug] [2024-10-22T05:40:24.708Z] ----------------------------------------------------------------------
+[debug] [2024-10-22T05:40:24.711Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\datng\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-10-22T05:40:24.711Z] CLI Version:   13.22.1
+[debug] [2024-10-22T05:40:24.711Z] Platform:      win32
+[debug] [2024-10-22T05:40:24.711Z] Node Version:  v20.15.0
+[debug] [2024-10-22T05:40:24.711Z] Time:          Tue Oct 22 2024 12:40:24 GMT+0700 (Indochina Time)
+[debug] [2024-10-22T05:40:24.711Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-22T05:40:24.718Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-22T05:40:24.718Z] > authorizing via signed-in user (datnguyen13021302@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Reactnative\DesignFull
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-10-22T05:42:11.447Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:42:11.447Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:42:11.449Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-10-22T05:42:12.144Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-10-22T05:42:12.145Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project designfull-4465a (DesignFull) 
+[info] 
+=== Dataconnect Setup
+[debug] [2024-10-22T05:42:44.791Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:42:44.791Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:42:44.791Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/designfull-4465a/billingInfo [none]
+[debug] [2024-10-22T05:42:46.049Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/designfull-4465a/billingInfo 200
+[debug] [2024-10-22T05:42:46.050Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/designfull-4465a/billingInfo {"name":"projects/designfull-4465a/billingInfo","projectId":"designfull-4465a","billingAccountName":"","billingEnabled":false}
+[info] i  dataconnect: ensuring required API sqladmin.googleapis.com is enabled... 
+[debug] [2024-10-22T05:42:46.051Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:42:46.051Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:42:46.051Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/sqladmin.googleapis.com [none]
+[debug] [2024-10-22T05:42:46.051Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/sqladmin.googleapis.com x-goog-quota-user=projects/designfull-4465a
+[debug] [2024-10-22T05:42:47.414Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/sqladmin.googleapis.com 200
+[debug] [2024-10-22T05:42:47.415Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/sqladmin.googleapis.com [omitted]
+[warn] !  dataconnect: missing required API sqladmin.googleapis.com. Enabling now... 
+[debug] [2024-10-22T05:42:47.416Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:42:47.416Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:42:47.416Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/sqladmin.googleapis.com:enable [none]
+[debug] [2024-10-22T05:42:47.416Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/sqladmin.googleapis.com:enable x-goog-quota-user=projects/designfull-4465a
+[debug] [2024-10-22T05:42:48.695Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/sqladmin.googleapis.com:enable 200
+[debug] [2024-10-22T05:42:48.695Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/sqladmin.googleapis.com:enable [omitted]
+[debug] [2024-10-22T05:42:58.708Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:42:58.708Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:42:58.708Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/sqladmin.googleapis.com [none]
+[debug] [2024-10-22T05:42:58.708Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/sqladmin.googleapis.com x-goog-quota-user=projects/designfull-4465a
+[debug] [2024-10-22T05:43:00.018Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/sqladmin.googleapis.com 200
+[debug] [2024-10-22T05:43:00.018Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/sqladmin.googleapis.com [omitted]
+[info] +  dataconnect: required API sqladmin.googleapis.com is enabled 
+[info] +  Wrote dataconnect\dataconnect.yaml 
+[info] +  Wrote dataconnect\schema\schema.gql 
+[info] +  Wrote dataconnect\connector\connector.yaml 
+[info] +  Wrote dataconnect\connector\queries.gql 
+[info] +  Wrote dataconnect\connector\mutations.gql 
+[info] +  Detected WEB app in directory D:\Reactnative\DesignFull 
+[info] i  Wrote new config to D:\Reactnative\DesignFull\dataconnect\connector/connector.yaml 
+[info] i  dataconnect: downloading dataconnect-emulator-1.5.1.exe... {"metadata":{"emulator":{"name":"dataconnect"},"message":"downloading dataconnect-emulator-1.5.1.exe..."}}
+[debug] [2024-10-22T05:43:00.071Z] >>> [apiv2][query] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-windows-v1.5.1 
+[debug] [2024-10-22T05:43:00.498Z] <<< [apiv2][status] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-windows-v1.5.1 200
+[debug] [2024-10-22T05:43:00.498Z] <<< [apiv2][body] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-windows-v1.5.1 [stream]
+[info] I1022 12:43:03.711898   11684 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "D:\\Reactnative\\DesignFull\\dataconnect-generated\\js\\default-connector"
+I1022 12:43:03.714857   11684 generate.go:40] Generated all sources. Writing them to disk...
+I1022 12:43:03.717540   11684 collector.go:107] connector "default" javascriptSdk wrote into "D:\\Reactnative\\DesignFull\\dataconnect-generated\\js\\default-connector"
+Generated sources: index.d.ts [264B] esm\index.esm.js [183B] esm\package.json [17B] index.cjs.js [224B] package.json [623B] 
+I1022 12:43:03.729885   11684 installsdk.go:76] Running command: C:\Program Files\nodejs\npm.cmd install file:dataconnect-generated\js\default-connector
+
+[info] i  Generated SDK code for default 
+[info] +  If you'd like to add more generated SDKs to your app your later, run firebase init dataconnect:sdk again 
+[info] i  If you'd like to provision a CloudSQL Postgres instance on the Firebase Data Connect no-cost trial:
+1. Please upgrade to the pay-as-you-go (Blaze) billing plan. Visit the following page:
+     https://console.firebase.google.com/project/designfull-4465a/usage/details
+2. Run firebase init dataconnect again to configure the Cloud SQL instance.
+3. Run firebase deploy --only dataconnect to deploy your Data Connect service. 
+[info] 
+=== Firestore Setup
+[debug] [2024-10-22T05:43:31.782Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:31.782Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:31.783Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/firestore.googleapis.com [none]
+[debug] [2024-10-22T05:43:31.783Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/firestore.googleapis.com x-goog-quota-user=projects/designfull-4465a
+[debug] [2024-10-22T05:43:32.163Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/firestore.googleapis.com 200
+[debug] [2024-10-22T05:43:32.163Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/firestore.googleapis.com [omitted]
+[debug] [2024-10-22T05:43:32.163Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:32.163Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:32.163Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/designfull-4465a/databases/(default) [none]
+[debug] [2024-10-22T05:43:33.423Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/designfull-4465a/databases/(default) 200
+[debug] [2024-10-22T05:43:33.423Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/designfull-4465a/databases/(default) {"name":"projects/designfull-4465a/databases/(default)","uid":"1aafa97b-069e-4937-a923-ce5c924e8927","createTime":"2024-09-18T07:16:27.543481Z","updateTime":"2024-09-18T07:16:27.543481Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2024-10-22T04:43:34.639376Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IILZrICkoYkDMIWRiNqFzIgD"}
+[debug] [2024-10-22T05:43:33.424Z] database_type: FIRESTORE_NATIVE
+[debug] [2024-10-22T05:43:33.424Z] database_type: FIRESTORE_NATIVE
+[debug] [2024-10-22T05:43:33.424Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-22T05:43:33.424Z] > authorizing via signed-in user (datnguyen13021302@gmail.com)
+[debug] [2024-10-22T05:43:33.424Z] [iam] checking project designfull-4465a for permissions ["firebase.projects.get"]
+[debug] [2024-10-22T05:43:33.424Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:33.424Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:33.424Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/designfull-4465a:testIamPermissions [none]
+[debug] [2024-10-22T05:43:33.424Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/designfull-4465a:testIamPermissions x-goog-quota-user=projects/designfull-4465a
+[debug] [2024-10-22T05:43:33.425Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/designfull-4465a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-22T05:43:34.494Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/designfull-4465a:testIamPermissions 200
+[debug] [2024-10-22T05:43:34.494Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/designfull-4465a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-10-22T05:43:47.567Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:47.567Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:47.567Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/designfull-4465a/releases pageSize=10&pageToken=
+[debug] [2024-10-22T05:43:48.843Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/designfull-4465a/releases 200
+[debug] [2024-10-22T05:43:48.843Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/designfull-4465a/releases {"releases":[{"name":"projects/designfull-4465a/releases/cloud.firestore","rulesetName":"projects/designfull-4465a/rulesets/c09ae44e-e330-4f14-a8ed-4c89e1633b69","createTime":"2024-09-18T07:16:35.502023Z","updateTime":"2024-09-18T07:17:04.809719Z"},{"name":"projects/designfull-4465a/releases/firebase.storage/designfull-4465a.appspot.com","rulesetName":"projects/designfull-4465a/rulesets/2a9f9171-e287-4669-a18d-5a43a59551d2","createTime":"2024-09-27T03:37:23.147325Z","updateTime":"2024-09-27T03:38:06.012138Z"}]}
+[debug] [2024-10-22T05:43:48.843Z] Found ruleset: projects/designfull-4465a/rulesets/c09ae44e-e330-4f14-a8ed-4c89e1633b69
+[debug] [2024-10-22T05:43:48.843Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:48.844Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:48.844Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/designfull-4465a/rulesets/c09ae44e-e330-4f14-a8ed-4c89e1633b69 [none]
+[debug] [2024-10-22T05:43:49.920Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/designfull-4465a/rulesets/c09ae44e-e330-4f14-a8ed-4c89e1633b69 200
+[debug] [2024-10-22T05:43:49.920Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/designfull-4465a/rulesets/c09ae44e-e330-4f14-a8ed-4c89e1633b69 [omitted]
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-10-22T05:43:52.750Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:52.750Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:52.750Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:52.750Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:52.750Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/designfull-4465a/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2024-10-22T05:43:52.753Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/designfull-4465a/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2024-10-22T05:43:53.998Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/designfull-4465a/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2024-10-22T05:43:53.998Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/designfull-4465a/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/designfull-4465a/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[debug] [2024-10-22T05:43:54.019Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/designfull-4465a/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2024-10-22T05:43:54.019Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/designfull-4465a/databases/(default)/collectionGroups/-/indexes {}
+[info] 
+=== Genkit Setup
+[debug] [2024-10-22T05:43:55.130Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-22T05:43:55.130Z] > authorizing via signed-in user (datnguyen13021302@gmail.com)
+[debug] [2024-10-22T05:43:55.130Z] [iam] checking project designfull-4465a for permissions ["firebase.projects.get"]
+[debug] [2024-10-22T05:43:55.130Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:55.130Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:55.130Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/designfull-4465a:testIamPermissions [none]
+[debug] [2024-10-22T05:43:55.130Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/designfull-4465a:testIamPermissions x-goog-quota-user=projects/designfull-4465a
+[debug] [2024-10-22T05:43:55.130Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/designfull-4465a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-22T05:43:56.091Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/designfull-4465a:testIamPermissions 200
+[debug] [2024-10-22T05:43:56.091Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/designfull-4465a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-22T05:43:56.091Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:56.091Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:56.091Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:56.091Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:56.091Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-10-22T05:43:56.091Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/designfull-4465a
+[debug] [2024-10-22T05:43:56.093Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-10-22T05:43:56.093Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/designfull-4465a
+[debug] [2024-10-22T05:43:57.351Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/cloudfunctions.googleapis.com 200
+[debug] [2024-10-22T05:43:57.351Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2024-10-22T05:43:57.351Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:57.352Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:43:57.352Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/cloudfunctions.googleapis.com:enable [none]
+[debug] [2024-10-22T05:43:57.352Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/cloudfunctions.googleapis.com:enable x-goog-quota-user=projects/designfull-4465a
+[debug] [2024-10-22T05:43:57.389Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/runtimeconfig.googleapis.com 200
+[debug] [2024-10-22T05:43:57.389Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-10-22T05:43:58.703Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/cloudfunctions.googleapis.com:enable 200
+[debug] [2024-10-22T05:43:58.703Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/cloudfunctions.googleapis.com:enable [omitted]
+[debug] [2024-10-22T05:44:08.706Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:44:08.706Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:44:08.706Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-10-22T05:44:08.706Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/designfull-4465a
+[debug] [2024-10-22T05:44:10.028Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/cloudfunctions.googleapis.com 200
+[debug] [2024-10-22T05:44:10.029Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/cloudfunctions.googleapis.com [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] +  Wrote functions/package.json 
+[info] +  Wrote functions/.eslintrc.js 
+[info] +  Wrote functions/tsconfig.json 
+[info] +  Wrote functions/tsconfig.dev.json 
+[info] +  Wrote functions/src/index.ts 
+[info] +  Wrote functions/.gitignore 
+[info] 
+[info] Installing Genkit CLI
+[error] Genkit initialization failed...
+[info] 
+=== Functions Setup
+[debug] [2024-10-22T05:45:46.240Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-22T05:45:46.240Z] > authorizing via signed-in user (datnguyen13021302@gmail.com)
+[debug] [2024-10-22T05:45:46.240Z] [iam] checking project designfull-4465a for permissions ["firebase.projects.get"]
+[debug] [2024-10-22T05:45:46.241Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:45:46.241Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:45:46.241Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/designfull-4465a:testIamPermissions [none]
+[debug] [2024-10-22T05:45:46.241Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/designfull-4465a:testIamPermissions x-goog-quota-user=projects/designfull-4465a
+[debug] [2024-10-22T05:45:46.241Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/designfull-4465a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-22T05:45:47.234Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/designfull-4465a:testIamPermissions 200
+[debug] [2024-10-22T05:45:47.234Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/designfull-4465a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-22T05:45:47.235Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:45:47.235Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:45:47.235Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:45:47.235Z] Checked if tokens are valid: true, expires at: 1729579104382
+[debug] [2024-10-22T05:45:47.235Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-10-22T05:45:47.235Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/designfull-4465a
+[debug] [2024-10-22T05:45:47.236Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-10-22T05:45:47.237Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/designfull-4465a
+[debug] [2024-10-22T05:45:48.493Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/runtimeconfig.googleapis.com 200
+[debug] [2024-10-22T05:45:48.493Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-10-22T05:45:48.547Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/cloudfunctions.googleapis.com 200
+[debug] [2024-10-22T05:45:48.547Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/designfull-4465a/services/cloudfunctions.googleapis.com [omitted]
+[info] 
+Detected existing codebase(s): default
+
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[error] Invalid codebase name. Codebase must be less than 64 characters and can contain only lowercase letters, numeric characters, underscores, and dashes.
+[error] Invalid codebase name. Codebase must be less than 64 characters and can contain only lowercase letters, numeric characters, underscores, and dashes.

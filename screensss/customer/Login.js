@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
-import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 import { Button } from 'react-native-paper';
-import { useMyContextController } from '../Context';
+import { login, useMyContextController } from '../../Context';
+import auth from "@react-native-firebase/auth"
+
 
 const Login = ({ navigation }) => {
-
-  const [controller, dispatch] = useMyContextController()
+  const [controller, dispatch] = useMyContextController();
+  //Lay userLogin tu store luc dau co the null
+  const {userLogin} = controller
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -15,22 +18,29 @@ const Login = ({ navigation }) => {
     setShowPassword(!showPassword);
   };
 
+  const cUSERS = firestore().collection("USERS")
   const onSubmit = () => {
     if (email === '' || password === '') {
       Alert.alert('Login Error', 'Please enter both email and password');
       return;
     }
-
-    auth().signInWithEmailAndPassword(email, password)
-      .then(() => {
-        console.log(`User logged in with Email: ${email}`);
-        navigation.navigate('todo'); 
-      })
-      .catch(error => {
-        Alert.alert('Login Error', error.message);
-      });
+    // Su dung componnt login trong store de dang nhap voi email va pasword
+    login(dispatch, email, password)
+    //userLogin khac null
   };
-
+  useEffect(()=>{ // 
+    console.log(userLogin)
+    if(userLogin!=null)
+    {
+      if(userLogin.role==='admin')
+        navigation.navigate("tabadmin")
+      else
+        navigation.navigate("tabcustomer")
+    }
+    else
+      navigation.navigate("login")
+  }, [userLogin]) // fecth userLogin neu co thay doi thi navigate sang man hinh tuong ung roi em nhe, thầy đọc tin nhắn zalo với ạ
+  //Em code sai nhé thầy ơi chỗ role mình đỡ 3 dấu bằng h === hoac == deu duoc
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Login</Text>
@@ -63,6 +73,9 @@ const Login = ({ navigation }) => {
 
       <Button onPress={() => navigation.navigate("register")}>
         Register New Account
+      </Button>
+      <Button onPress={() => navigation.navigate("resetpassword")}>
+        If you Forgot your password, please Reset!
       </Button>
     </View>
   );
