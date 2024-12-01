@@ -6,6 +6,8 @@ import AddService from "../../screensss/admin/AddService";
 import { Avatar, IconButton } from "react-native-paper";
 import { TouchableOpacity } from "react-native";
 import { useMyContextController } from "../../Context";
+import AddCornPopService from "../../screensss/admin/AddCornPopService";
+import Payments from "../../screensss/admin/Payments";
 
 const Stack = createStackNavigator();
 
@@ -34,6 +36,9 @@ const RouterHome = ({ navigation }) => {
       <Stack.Screen name="services" component={Services} />
       <Stack.Screen name="servicedetail" component={ServiceDetail} />
       <Stack.Screen name="addservice" component={AddService} />
+      <Stack.Screen name="addcornpopservice" component={AddCornPopService} />
+      <Stack.Screen name="payments" component={Payments} />
+
     </Stack.Navigator>
   );
 };

@@ -9,6 +9,16 @@ import Profile from "../../screensss/customer/Profile";
 import EditProfile from "../../screensss/customer/EditProfile";
 import Customers from "../../screensss/admin/Customers";
 import CustomerDetail from "../../screensss/admin/CustomerDetail";
+import Welcome from "../../screensss/customer/Welcome";
+import DetailMovie from "../../screensss/customer/DetailMovie";
+import FavouriteMovie from "../../screensss/customer/FavouriteMovie";
+import FilterByDate from "../../screensss/customer/FilterByDate";
+import Paypal from "../../screensss/customer/Paypal";
+import Checkout from "../../screensss/customer/Checkout";
+import CornPopDetail from "../../screensss/admin/CornPopDetail";
+import CornDetail from "../../screensss/customer/CornDetail";
+import Bill from "../../screensss/customer/Bill";
+import BillCorn from "../../screensss/customer/BillCorn";
 
 const Stack = createStackNavigator();
 
@@ -19,6 +29,7 @@ const MainRouter = ({ navigation }) => {
         headerShown: false,
       }}
     >
+      <Stack.Screen name="welcome" component={Welcome} />
       <Stack.Screen name="login" component={Login} />
       <Stack.Screen name="register" component={Register} />
       <Stack.Screen name="tabadmin" component={TabAdmin} />
@@ -29,6 +40,24 @@ const MainRouter = ({ navigation }) => {
       <Stack.Screen name="changepassword" component={ChangePassword} />
       <Stack.Screen name="customers" component={Customers} />
       <Stack.Screen name="customerdetail" component={CustomerDetail} />
+      <Stack.Screen name="detailmovie" component={DetailMovie} />
+      <Stack.Screen name="favouritemovie" component={FavouriteMovie} />
+      <Stack.Screen name="FilterByDate" component={FilterByDate} />
+      <Stack.Screen name="paypal" component={Paypal} />
+      <Stack.Screen name="checkout" component={Checkout} />
+      <Stack.Screen name="cornpopdetail" component={CornPopDetail} />
+      <Stack.Screen name="corndetail" component={CornDetail} />
+      <Stack.Screen name="bill" component={Bill} />
+      <Stack.Screen name="billcorn" component={BillCorn} />
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,103 +1,79 @@
-import { useState, useEffect } from "react";
-import { Alert, StyleSheet, View } from "react-native";
-import { Button, TextInput, Text } from "react-native-paper";
+import React, { useState, useEffect } from "react";
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from "react-native";
 import firestore from "@react-native-firebase/firestore";
 
 const CustomerDetail = ({ route, navigation }) => {
-    const { customerId } = route.params;
-    const [fullName, setFullName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [address, setAddress] = useState("");
-    const [gender, setGender] = useState(true); 
+    const { userId } = route.params; // Lấy ID người dùng từ navigation
+    const [userData, setUserData] = useState({
+        fullName: "",
+        email: "",
+        phone: "",
+        address: "",
+    });
 
     useEffect(() => {
-        const customerRef = firestore().collection("USERS").doc(customerId);
-        const unsubscribe = customerRef.onSnapshot(doc => {
-            if (doc.exists) {
-                const data = doc.data();
-                setFullName(data.fullName);
-                setEmail(data.email);
-                setPhone(data.phone);
-                setAddress(data.address);
-                setGender(data.gender);
+        const fetchData = async () => {
+            try {
+                const doc = await firestore().collection("USERS").doc(userId).get();
+                if (doc.exists) {
+                    setUserData(doc.data());
+                } else {
+                    Alert.alert("Error", "User data not found.");
+                    navigation.goBack(); // Quay lại màn hình trước nếu không tìm thấy người dùng
+                }
+            } catch (error) {
+                Alert.alert("Error", "Failed to fetch user data.");
             }
-        });
+        };
+        fetchData();
+    }, [userId]);
 
-        return () => unsubscribe(); 
-    }, [customerId]);
+    const handleUpdate = async () => {
+        try {
+            await firestore().collection("USERS").doc(userId).update(userData);
+            Alert.alert("Success", "User data updated successfully.");
+            navigation.goBack(); // Quay lại màn hình trước sau khi cập nhật thành công
+        } catch (error) {
+            Alert.alert("Error", "Failed to update user data.");
+        }
+    };
 
-    const handleUpdate = () => {
-        const customerRef = firestore().collection("USERS").doc(customerId);
-        customerRef
-            .update({
-                fullName,
-                email,
-                phone,
-                address,
-                gender,
-            })
-            .then(() => {
-                Alert.alert("Success", "Customer information updated!");
-                navigation.goBack(); 
-            })
-            .catch(error => {
-                Alert.alert("Error", error.message);
-            });
+    const handleChange = (key, value) => {
+        setUserData({ ...userData, [key]: value });
     };
 
     return (
         <View style={styles.container}>
-            <Text style={styles.headerText}>Update Customer</Text>
-
+            <Text style={styles.headerText}>Edit User Details</Text>
             <TextInput
-                label="Full Name"
-                value={fullName}
-                onChangeText={setFullName}
                 style={styles.input}
+                placeholder="Full Name"
+                value={userData.fullName}
+                onChangeText={(value) => handleChange("fullName", value)}
             />
             <TextInput
-                label="Email"
-                value={email}
-                onChangeText={setEmail}
                 style={styles.input}
+                placeholder="Email"
+                value={userData.email}
                 keyboardType="email-address"
-                editable={false} 
+                onChangeText={(value) => handleChange("email", value)}
             />
             <TextInput
-                label="Phone"
-                value={phone}
-                onChangeText={setPhone}
                 style={styles.input}
+                placeholder="Phone"
+                value={userData.phone}
                 keyboardType="phone-pad"
+                onChangeText={(value) => handleChange("phone", value)}
             />
             <TextInput
-                label="Address"
-                value={address}
-                onChangeText={setAddress}
                 style={styles.input}
+                placeholder="Address"
+                value={userData.address}
+                onChangeText={(value) => handleChange("address", value)}
             />
-            <Text style={styles.label}>Gender:</Text>
-            <View style={styles.genderContainer}>
-                <Button
-                    mode={gender ? "contained" : "outlined"}
-                    onPress={() => setGender(true)}
-                    style={styles.genderButton}
-                >
-                    Male
-                </Button>
-                <Button
-                    mode={!gender ? "contained" : "outlined"}
-                    onPress={() => setGender(false)}
-                    style={styles.genderButton}
-                >
-                    Female
-                </Button>
-            </View>
-
-            <Button mode="contained" onPress={handleUpdate} style={styles.updateButton}>
-                Update Customer
-            </Button>
+            <TouchableOpacity style={styles.updateButton} onPress={handleUpdate}>
+                <Text style={styles.updateButtonText}>Update</Text>
+            </TouchableOpacity>
         </View>
     );
 };
@@ -105,39 +81,37 @@ const CustomerDetail = ({ route, navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 20,
-        backgroundColor: "#f4f6f7", 
+        padding: 15,
+        backgroundColor: "#f4f6f7",
     },
     headerText: {
         fontSize: 26,
         fontWeight: "bold",
-        marginBottom: 20,
-        color: "#2c3e50", 
+        marginBottom: 15,
+        color: "#2c3e50",
         textAlign: "center",
     },
     input: {
+        height: 50,
+        borderColor: "#dfe6e9",
+        borderWidth: 1,
+        borderRadius: 12,
         marginBottom: 15,
-        backgroundColor: "white",
-    },
-    label: {
-        marginBottom: 10,
+        paddingHorizontal: 15,
+        backgroundColor: "#ffffff",
         fontSize: 16,
-        fontWeight: "bold",
-        color: "#34495e",
-    },
-    genderContainer: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        marginBottom: 20,
-    },
-    genderButton: {
-        flex: 1,
-        marginHorizontal: 5,
     },
     updateButton: {
-        marginTop: 30,
-        paddingVertical: 10,
-        backgroundColor: "#1abc9c",
+        backgroundColor: "#27ae60",
+        paddingVertical: 15,
+        borderRadius: 12,
+        alignItems: "center",
+        marginTop: 10,
+    },
+    updateButtonText: {
+        color: "#ffffff",
+        fontWeight: "bold",
+        fontSize: 18,
     },
 });
 

@@ -39,11 +39,10 @@ const Login = ({ navigation }) => {
     }
     else
       navigation.navigate("login")
-  }, [userLogin]) // fecth userLogin neu co thay doi thi navigate sang man hinh tuong ung roi em nhe, thầy đọc tin nhắn zalo với ạ
-  //Em code sai nhé thầy ơi chỗ role mình đỡ 3 dấu bằng h === hoac == deu duoc
+  }, [userLogin]) 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
+      <Text style={styles.title}>Login to CGV</Text>
 
       <TextInput
         style={styles.input}

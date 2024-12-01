@@ -67,8 +67,8 @@ const Setting = ({ navigation }) => {
           />
         </View>
 
-        <TouchableOpacity style={[styles.option, isDarkMode && styles.darkOption]} onPress={() => {}}>
-          <Text style={[styles.optionText, isDarkMode && styles.darkOptionText]}>Language</Text>
+        <TouchableOpacity style={[styles.option, isDarkMode && styles.darkOption]} onPress={() => navigation.navigate('favouritemovie')}>
+          <Text style={[styles.optionText, isDarkMode && styles.darkOptionText]}>Favourite Movie</Text>
         </TouchableOpacity>
       </View>
 
